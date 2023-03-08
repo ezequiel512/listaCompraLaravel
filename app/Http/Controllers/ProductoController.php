@@ -10,24 +10,23 @@ class ProductoController extends Controller
 
     public function getIndex()
     {
-        $this->arrayProductos;
-        return view('productos.index',array('arrayProductos'=>$this));
+        return view('productos.index', array('arrayProductos'=>self::$arrayProductos));
     }
     public function getCreate()
     {
-        return view('productos.index');
+        return view('productos.create');
     }
     public function getShow($id)
     {
-        $this->arrayProductos[$id];
-        return view('productos.show', array('id' => $id), array('arrayProductos'=>$this));
+        return view('productos.show', array('arrayProductos'=>self::$arrayProductos[$id-1],
+                                            'id' => $id));
     }
     public function getEdit($id)
     {
         return view('productos.edit', array('id' => $id));
     }
 
-    private $arrayProductos = array(
+    private static $arrayProductos = array(
         array('Aceite','Aceites y grasas'),
         array('Aceite de oliva','Aceites y grasas'),
         array('Grasa comestible','Aceites y grasas'),
