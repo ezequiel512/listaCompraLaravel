@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
     }
     private function seedProductos(){
 
-        $arrayProductos= array(
+        $arrayProductos = array(
             array('Aceite','Aceites y grasas'),
             array('Aceite de oliva','Aceites y grasas'),
             array('Grasa comestible','Aceites y grasas'),
