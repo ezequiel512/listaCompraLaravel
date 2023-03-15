@@ -11,32 +11,32 @@
                 <div class="card-body" style="padding:30px">
 
                     {{-- TODO: Abrir el formulario e indicar el método POST --}}
-                    <form>
+                    <form action="{{ url('/productos/edit/'.$productos['id'])}}" method="POST">
                         {{ method_field('PUT') }}
                         {{-- TODO: Protección contra CSRF --}}
-
+                        @CSRF
                         <div class="form-group">
-                            <label for="title">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" class="form-control">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" class="form-control" value="{{$productos->nombre}}">
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Precio</label>
-                            <input type="number" name="precio" id="precio" class="form-control">
+                            <label for="precio">Precio</label>
+                            <input type="number" name="precio" id="precio" class="form-control" value="{{$productos->precio}}">
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Categoría</label>
-                            <input type="text" name="categoria" id="categoria" class="form-control">
+                            <label for="categoria">Categoría</label>
+                            <input type="text" name="categoria" id="categoria" class="form-control" value="{{$productos->categoria}}">
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Imagen</label>
-                            <input type="text" name="imagen" id="imagen" class="form-control">
+                            <label for="imagen">Imagen</label>
+                            <input type="text" name="imagen" id="imagen" class="form-control" value="{{$productos->imagen}}">
                         </div>
 
                         <div class="form-group">
-                            <label for="synopsis">Descripción</label>
+                            <label for="descripcion">Descripción</label>
                             <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
                         </div>
 

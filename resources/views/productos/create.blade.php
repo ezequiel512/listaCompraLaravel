@@ -11,31 +11,32 @@
                 <div class="card-body" style="padding:30px">
 
                     {{-- TODO: Abrir el formulario e indicar el método POST --}}
-                    <form>
+                    <form action="{{ url('/productos/create')}}" method="POST">
+                        {{ method_field('POST') }}
                         {{-- TODO: Protección contra CSRF --}}
-
+                        @CSRF
                         <div class="form-group">
-                            <label for="title">Nombre</label>
+                            <label for="nombre">Nombre</label>
                             <input type="text" name="nombre" id="nombre" class="form-control">
                            </div>
 
                         <div class="form-group">
-                            <label for="title">Precio</label>
+                            <label for="precio">Precio</label>
                             <input type="number" name="precio" id="precio" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Categoría</label>
+                            <label for="categoria">Categoría</label>
                             <input type="text" name="categoria" id="categoria" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Imagen</label>
+                            <label for="imagen">Imagen</label>
                             <input type="text" name="imagen" id="imagen" class="form-control">
                         </div>
 
                         <div class="form-group">
-                            <label for="synopsis">Descripción</label>
+                            <label for="descripcion">Descripción</label>
                             <textarea name="descripcion" id="descripcion" class="form-control" rows="3"></textarea>
                         </div>
 
